@@ -341,6 +341,7 @@ run('ScriptForExportingImages.m')
 
 %%%%%%%%%%%%%%%% figure 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(4);
 figname = 'figure4';
 figure_count = 1;
 
@@ -349,13 +350,13 @@ load ("DDS_doses.mat")
 for i = 1:length(doseo) %for loop for each dose
 % plot_DDS_drug_release_dynamics
 subplot(2,4,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 hold on
 box on
-plot(drug_release_time(i,:), drug_release_profile(i,:), 'LineWidth', 2)
+plot(drug_release_time(i,2:end), drug_release_profile(i,2:end), 'LineWidth', 2)
 xlim([-2 200])
 xlabel('Time (days)')
-ylabel('DDS Drug Release (mg)');
+ylabel('DDS Drug release rate (mg/day)');
 legend(sprintf('Dose %0.2f mg', doseo(i)), 'Location', 'northeast')
 %fontsize(figure(3), 17, "points")
 pbaspect([1 1 1])
@@ -367,7 +368,7 @@ end
 
 %Drug Concentration aqueous with different doses
 subplot(2,4,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 box on
 hold on
 for j = 1:length(doseo)
@@ -387,7 +388,7 @@ hold off
 
 %Drug Concentration retina with different doses
 subplot(2,4,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 hold on
 box on
 for j = 1:length(doseo)
@@ -407,7 +408,7 @@ hold off
 
 %Drug Concentration choroid with different doses
 subplot(2,4,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 hold on
 box on
 for j = 1:length(doseo)
@@ -427,7 +428,7 @@ hold off
 
 %Drug Concentration serum with different doses
 subplot(2,4,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 hold on
 box on
 for j = 1:length(doseo)
@@ -460,6 +461,7 @@ run('ScriptForExportingImages.m')
 
 %%%%%%%%%%%%%%%% figure 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(5);
 figname = 'figure5';
 figure_count = 1;
 
@@ -484,7 +486,7 @@ xticks(1:length(radius_scale));
 xticklabels({'0.001R_{C}', 'R_{C}', '2R_{C}', '3R_{C}','5R_{C}', '10R_{C}', '20R_{C}'}); 
 ylabel('Time (days)');
 set(hBar1, 'BarWidth', barWidth);
-ylim([0  800])
+ylim([0  1000])
 title('Chitosan Single Layer Varied R_{C}');
 set(gca, 'FontSize', 12)
 legend({'Upper IC_{50}', 'Lower IC_{50}'}, 'FontSize',14, 'Location', 'northwest'); % Legend for rows
@@ -503,7 +505,7 @@ xticks(1:length(radius_scale));
 xticklabels({'0.001R_{C}', 'R_{C}', '2R_{C}', '3R_{C}','5R_{C}', '10R_{C}', '20R_{C}'});
 ylabel('VEGF Suppression Time (Days)');
 set(hBar1, 'BarWidth', barWidth);
-ylim([0  800])
+ylim([0  1000])
 title('Chitosan Single Layer Varied R_{C}');
 set(gca, 'FontSize', 12)
 legend({'Vitreous 10%', 'Aqueous 10%'}, 'FontSize',14, 'Location', 'northwest');
@@ -523,7 +525,7 @@ xticks(1:length(radius_scale));
 xticklabels({'0.001R_{C}', 'R_{C}', '2R_{C}', '3R_{C}','5R_{C}', '10R_{C}', '20R_{C}'});
 ylabel('VEGF Suppression Time (Days)');
 set(hBar1, 'BarWidth', barWidth);
-ylim([0  800])
+ylim([0  1000])
 title('Chitosan Single Layer Varied R_{C}');
 set(gca, 'FontSize', 12)
 legend({'Vitreous 50%', 'Aqueous 50%'}, 'FontSize',14, 'Location', 'northwest');
@@ -618,6 +620,7 @@ run('ScriptForExportingImages.m')
 
 %%%%%%%%%%%%%%%% figure 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(6);
 figname = 'figure6';
 figure_count = 1;
 
@@ -637,13 +640,13 @@ for i = 1:length(doseo) %for loop for each dose
 subplot(2,7,figure_count)
 hold on
 box on
-plot(drug_release_time(i,:), drug_release_profile(i,:), 'LineWidth', 2)
+plot(drug_release_time(i,2:end), drug_release_profile(i,2:end), 'LineWidth', 2)
 xlim([-2 200])
 xlabel('Time (days)')
-ylabel('DDS Drug Release (mg)');
+ylabel('DDS Drug release rate (mg/day)');
 legend(sprintf('%0.3fR_C', radius_scale(i)), 'Location', 'northeast')
 %fontsize(figure(3), 17, "points")
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 pbaspect([1 1 1])
 axis square
 %exportgraphics(figure(figure_count),sprintf('drug_release_DDS%d.png', radius_scale(i)), 'Resolution', 300)
@@ -671,7 +674,7 @@ xlabel('Time (days)')
 pbaspect([1 1 1])
 axis square
 %fontsize(figure(2), 20, "points")
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 %exportgraphics(figure(figure_count),sprintf('drug_concentration%d.png', radius_scale(i)), 'Resolution', 300)
 figure_count = figure_count+1;
 hold off
@@ -693,6 +696,7 @@ run('ScriptForExportingImages.m')
 
 %%%%%%%%%%%%%%%% figure 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(7);
 figname = 'figure7';
 figure_count = 1;
 
@@ -711,13 +715,13 @@ for i = 1:length(doseo) %for loop for each dose
 
 % plot_DDS_drug_release_dynamics
 subplot(2,7,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 hold on
 box on
-plot(drug_release_time(i,:), drug_release_profile(i,:), 'LineWidth', 2)
+plot(drug_release_time(i,2:end), drug_release_profile(i,2:end), 'LineWidth', 2)
 xlim([-2 200])
 xlabel('Time (days)')
-ylabel('DDS Drug Release (mg)');
+ylabel('DDS Drug release rate (mg/day)');
 legend(sprintf('%0.3fR_P', radius_scale(i)), 'Location', 'northeast')
 %fontsize(figure(3), 17, "points")
 pbaspect([1 1 1])
@@ -748,16 +752,27 @@ xlabel('Time (days)')
 pbaspect([1 1 1])
 axis square
 %fontsize(figure(2), 20, "points")
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 %exportgraphics(figure(figure_count),sprintf('drug_concentration%d.png', radius_scale(i)), 'Resolution', 300)
 figure_count = figure_count+1;
 hold off
 end
 
+labelstring = {'A', 'B', 'C', 'D','E', 'F','G', 'H', 'I', 'J','K', 'L','M','N'};
+for v = 1:14
+    subplot(2,7,v)
+    hold on
+    text(-0.2, 1.1, labelstring(v)', 'Units', 'normalized', 'FontWeight', 'bold','FontSize', 20)
+end
+
+widthInches = 35;
+heightInches = 10;
+run('ScriptForExportingImages.m')
 
 
 %%%%%%%%%%%%%%%% figure 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(8);
 figname = 'figure8';
 figure_count = 1;
 
@@ -854,7 +869,7 @@ xticks(1:length(thickness_scale));
 xticklabels({'0.01\DeltaR', '0.1\DeltaR', '\DeltaR', '10\DeltaR', '20\DeltaR', '25\DeltaR', '30\DeltaR'}); 
 ylabel('Time (days)');
 set(hBar1, 'BarWidth', barWidth);
-ylim([0  350])
+ylim([0  1000])
 title('Bi-Layered Varied \DeltaR, Constant R_{C}');
 set(gca, 'FontSize', 8)
 legend({'Upper IC_{50}', 'Lower IC_{50}'}, 'FontSize',8, 'Location', 'northwest');
@@ -874,7 +889,7 @@ xticks(1:length(thickness_scale));
 xticklabels({'0.01\DeltaR', '0.1\DeltaR', '\DeltaR', '10\DeltaR', '20\DeltaR', '25\DeltaR', '30\DeltaR'}); 
 ylabel('VEGF Suppression Time (Days)');
 set(hBar1, 'BarWidth', barWidth);
-ylim([0  350])
+ylim([0  1000])
 title('Bi-Layered Varied \DeltaR, Constant R_{C}');
 set(gca, 'FontSize', 8)
 legend({'Vitreous 10%', 'Aqueous 10%'}, 'FontSize',8, 'Location', 'northwest');
@@ -894,7 +909,7 @@ xticks(1:length(thickness_scale));
 xticklabels({'0.01\DeltaR', '0.1\DeltaR', '\DeltaR', '10\DeltaR', '20\DeltaR', '25\DeltaR', '30\DeltaR'}); 
 ylabel('VEGF Suppression Time (Days)');
 set(hBar1, 'BarWidth', barWidth);
-ylim([0  350])
+ylim([0  1000])
 title('Bi-Layered Varied \DeltaR, Constant R_{C}');
 set(gca, 'FontSize', 8)
 legend({'Vitreous 50%', 'Aqueous 50%'}, 'FontSize',8, 'Location', 'northwest');
@@ -981,7 +996,7 @@ labelstring = {'A', 'B', 'C', 'D','E', 'F','G','H', 'I'};
 for v = 1:9
     subplot(3,3,v)
     hold on
-    text(-0.2, 1.1, labelstring(v)', 'Units', 'normalized', 'FontWeight', 'bold','FontSize', 14)
+    text(-0.2, 1.1, labelstring(v)', 'Units', 'normalized', 'FontWeight', 'bold','FontSize', 20)
 end
 
 widthInches = 15;
@@ -997,6 +1012,7 @@ run('ScriptForExportingImages.m')
 
 %%%%%%%%%%%%%%%% figure 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(9);
 figname = 'figure9';
 figure_count = 1;
 
@@ -1013,13 +1029,13 @@ for i = 1:length(doseo) %for loop for each dose
 
 % plot_DDS_drug_release_dynamics
 subplot(2,7,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 hold on
 box on
-plot(drug_release_time(i,:), drug_release_profile(i,:), 'LineWidth', 2)
+plot(drug_release_time(i,2:end), drug_release_profile(i,2:end), 'LineWidth', 2)
 xlim([-2 200])
 xlabel('Time (days)')
-ylabel('DDS Drug Release (mg)');
+ylabel('DDS Drug release rate (mg/day)');
 %fontsize(figure(3), 17, "points")
 legend(sprintf('%0.2fR_C', radius_scale(i)), 'Location', 'northeast')
 pbaspect([1 1 1])
@@ -1048,7 +1064,7 @@ xlabel('Time (days)')
 %title('Vitreous with DDS')
 pbaspect([1 1 1])
 axis square
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 %fontsize(figure(2), 20, "points")
 %exportgraphics(figure(figure_count),sprintf('drug_concentration%d.png', radius_scale(i)), 'Resolution', 300)
 figure_count = figure_count+1;
@@ -1070,6 +1086,7 @@ run('ScriptForExportingImages.m')
 
 %%%%%%%%%%%%%%%% figure 10 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(10);
 figname = 'figure10';
 figure_count = 1;
 
@@ -1086,13 +1103,13 @@ for i = 1:length(doseo) %for loop for each dose
 
 % plot_DDS_drug_release_dynamics
 subplot(2,7,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 hold on
 box on
-plot(drug_release_time(i,:), drug_release_profile(i,:), 'LineWidth', 2)
+plot(drug_release_time(i,2:end), drug_release_profile(i,2:end), 'LineWidth', 2)
 xlim([-2 200])
 xlabel('Time (days)')
-ylabel('DDS Drug Release (mg)');
+ylabel('DDS Drug release rate (mg/day)');
 legend(sprintf('%0.2fΔR', thickness_scale(i)), 'Location', 'northeast')
 %fontsize(figure(3), 17, "points")
 pbaspect([1 1 1])
@@ -1122,7 +1139,7 @@ xlabel('Time (days)')
 %title('Vitreous with DDS')
 pbaspect([1 1 1])
 axis square
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 %fontsize(figure(2), 20, "points")
 %exportgraphics(figure(figure_count),sprintf('drug_concentration%d.png', radius_scale(i)), 'Resolution', 300)
 %exportgraphics(figure(figure_count),sprintf('drug_concentration%d.png', thickness_scale(i)), 'Resolution', 300)
@@ -1144,6 +1161,7 @@ run('ScriptForExportingImages.m')
 
 %%%%%%%%%%%%%%%% figure 11 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+figure(11);
 figname = 'figure11';
 figure_count = 1;
 
@@ -1159,13 +1177,13 @@ for i = 1:length(doseo) %for loop for each dose
 
 % plot_DDS_drug_release_dynamics
 subplot(2,7,figure_count)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 hold on
 box on
-plot(drug_release_time(i,:), drug_release_profile(i,:), 'LineWidth', 2)
+plot(drug_release_time(i,2:end), drug_release_profile(i,2:end), 'LineWidth', 2)
 xlim([-2 200])
 xlabel('Time (days)')
-ylabel('DDS Drug Release (mg)');
+ylabel('DDS Drug release rate (mg/day)');
 legend(sprintf('%0.2fR_C, %0.2fΔR', radius_scale(i),thickness_scale(i)), 'Location', 'northeast')
 %fontsize(figure(3), 17, "points")
 pbaspect([1 1 1])
@@ -1195,7 +1213,7 @@ xlabel('Time (days)')
 %title('Vitreous with DDS')
 pbaspect([1 1 1])
 axis square
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 14)
 %fontsize(figure(2), 20, "points")
 %exportgraphics(figure(figure_count),sprintf('drug_concentration%d.png', radius_scale(i)), 'Resolution', 300)
 %exportgraphics(figure(figure_count),sprintf('drug_concentration%d.png', radius_scale(i)), 'Resolution', 300)

@@ -107,10 +107,10 @@ figure(figure_count)
 set(gca, 'FontSize', 16)
 hold on
 box on
-plot(time(1:end)/(60*60*24), drug_dose(1:end), 'LineWidth', 2)
+plot(time(2:end)/(60*60*24), drug_dose(2:end), 'LineWidth', 2)
 xlim([-2 200])
 xlabel('Time (days)')
-ylabel('DDS Drug Release (mg)');
+ylabel('DDS Drug release rate (mg/day)');
 legend(sprintf('%0.2fΔR', thickness_scale(i)), 'Location', 'northeast')
 %fontsize(figure(3), 17, "points")
 pbaspect([1 1 1])
@@ -150,15 +150,17 @@ hold off
 
 % skipping first two days of data to avoid the effect of initial burst release
 Index = 2*time_interval;
-CAvnew = CAv(Index:end);
+CAvnew = CAv(1:end);
 CAvnew = CAvnew.*microtonano;
-UpperIC50 = UpperIC50(Index:end);
-timenew = t(Index:end);
+UpperIC50 = UpperIC50(1:end);
+timenew = t(1:end);
 if (CAvnew(1)<UpperIC50(1))
 index_upper_IC50 = 1;
 time_at_upper_IC50 = 0;
 else
-index_upper_IC50 = find(CAvnew <= UpperIC50, 1);
+CAvnew_rev = flip(CAvnew);
+index_upper_IC50_rev = find(CAvnew_rev >= UpperIC50, 1);
+index_upper_IC50=length(CAvnew)-index_upper_IC50_rev+1;
 time_at_upper_IC50 = timenew(index_upper_IC50);
 end
 

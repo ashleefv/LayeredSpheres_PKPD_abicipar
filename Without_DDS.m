@@ -1,13 +1,6 @@
 clc;
 clear;
 
-% Removing existing PNG files from the current directory 
-pngFiles = dir('*.png');
-for i = 1:length(pngFiles)
-    delete(pngFiles(i).name);
-end
-
-
 species="human"; %can change to rabbit
 
 figure_count = 1;
