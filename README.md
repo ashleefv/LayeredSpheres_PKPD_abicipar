@@ -8,9 +8,9 @@ Eduardo A. Chacin Ruiz<sup>a</sup>, Katelyn E. Swindle-Reilly<sup>e,f,g</sup>, A
 <sup>a</sup>Department of Chemical and Biological Engineering, University at Buffalo, The State University of New York, Buffalo, NY, 14260, USA<br/>
 <sup>b</sup>Department of Biomedical Engineering, University at Buffalo, The State University of New York, Buffalo, NY, 14260, USA<br/>
 <sup>c</sup>Institute for Artificial Intelligence and Data Science, University at Buffalo, The State University of New York, Buffalo, NY, 14260, USA<br/>
-<sup>d</sup>Witebsky Center for Microbial Pathogenesis and Immunology, University at Buffalo, The State University of New York, Buffalo, NY, 14203, USA
+<sup>d</sup>Witebsky Center for Microbial Pathogenesis and Immunology, University at Buffalo, The State University of New York, Buffalo, NY, 14203, USA<br/>
 <sup>e</sup>Department of Pharmaceutical Sciences, University at Buffalo, The State University of New York, Buffalo, NY, 14215, USA<br/>
-<sup>f</sup>Department of Biomedical Engineering, University of Delaware, Newark, DE, 19716, USA
+<sup>f</sup>Department of Biomedical Engineering, University of Delaware, Newark, DE, 19716, USA<br/>
 <sup>g</sup>William G. Lowrie Department of Chemical and Biomolecular Engineering, The Ohio State University, Columbus, OH, 43210, USA<br/>
 <sup>h</sup>Department of Ophthalmology and Visual Sciences, The Ohio State University, Columbus, OH, 43210, USA<br/>
 <sup>i</sup>Department of Biomedical Engineering, The Ohio State University, Columbus, OH, 43210, USA<br/>
